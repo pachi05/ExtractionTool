@@ -1,0 +1,24 @@
+.table-view {
+  border-collapse: collapse !important;
+}
+.table-view td,
+.table-view th {
+
+  background-color: #fff !important;
+  border: 1px solid #ddd !important;
+  white-space: nowrap;
+  font-size: small;
+  text-align: center;
+}
+
+.table-download {
+  border-collapse: collapse !important;
+}
+.table-download td,
+.table-download th {
+
+  background-color: #fff !important;
+  white-space: nowrap;
+  font-size: small;
+  text-align: center;
+}
