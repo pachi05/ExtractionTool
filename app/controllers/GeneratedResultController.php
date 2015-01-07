@@ -6,6 +6,13 @@ class GeneratedResultController extends BaseController {
 
 	public function showGeneratedReport()
 	{
-		$this->layout->content = View::make('generatedResult.viewGeneratedResults');
+		$files = GeneratedFile::all();
+		$this->layout->content = View::make('generatedResult.viewGeneratedResults')
+			->with('files', $files);
+	}
+
+	public function downloadResult()
+	{
+		
 	}
 }

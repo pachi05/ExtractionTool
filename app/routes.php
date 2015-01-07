@@ -13,6 +13,8 @@
 
 Route::get('/', 'TestResultController@showResults');
 
-Route::post('/', 'TestResultController@createTestResultsList');
+Route::post('/generate', 'TestResultController@createTestResultsList');
 
 Route::get('/generatedResults', 'GeneratedResultController@showGeneratedReport');
+
+Route::get('/downloadResults', 'GeneratedResultController@downloadResult');

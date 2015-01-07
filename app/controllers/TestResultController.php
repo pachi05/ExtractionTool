@@ -52,22 +52,29 @@ class TestResultController extends BaseController {
 
 	public function createTestResultsList()
 	{
+		$fileName = 'TestResults_'.Input::get('dateFrom').'_'.Input::get('dateTo').'_'.date("Y_m_d_His");
+		$dateCreated = date('Y-m-d H:i:s');
+		$createdBy = 'admin';
+		Excel::create($fileName, function($excel) {
+			$excel->setTitle('TestResults_'.Input::get('dateFrom').'_'.Input::get('dateTo')) 
+			->setCreator('TeamTMC-IT')
+			->setCompany('MLI-TMC')
+			->setLastModifiedBy('MLIExtractionTool v1.0');
 
-		// Excel::create('TestResult', function($excel) {
-		// 	$excel->setTitle('TestResults_'.Input::get('dateFrom').'_'.Input::get('dateTo'))
-		// 	->setCreator('TeamTMC-IT')
-		// 	->setCompany('MLI')
-		// 	->setLastModifiedBy('MLIExtractionTool v1.0');
+			$excel->sheet('TestResults', function($sheet) {
+				$sheet->setOrientation('landscape');
+				$sheet->fromModel(TestResult::all());
+			});
+		})->store('csv');
 
-		// 	$excel->sheet('TestResults', function($sheet) {
-		// 		$sheet->setOrientation('landscape');
-		// 		$sheet->fromModel(TestResult::where('_testdate', '>=', Input::get('dateFrom'))
-		// 			->where('_testdate', '<=', Input::get('dateTo'))
-		// 			->get());
-		// 	});
-		// })->store('csv')->download('csv');
+		$createdFile = new GeneratedFile();
+		$createdFile->_fileName = $fileName;
+		$createdFile->_extension = "csv";
+		$createdFile->_dateCreated = $dateCreated;
+		$createdFile->_createdBy = $createdBy;
+		$createdFile->save();
 
-		return Response::json(array('status' => 'success'));
+		return Redirect::to('generatedResults');
 	}
 
 }
