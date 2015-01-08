@@ -53,7 +53,7 @@ class TestResultController extends BaseController {
 	public function createTestResultsList()
 	{
 		$fileName = 'TestResults_'.Input::get('dateFrom').'_'.Input::get('dateTo').'_'.date("Y_m_d_His");
-		$dateCreated = date('Y-m-d H:i:s');
+		$dateCreated = date('Y/m/d h:i A');
 		$createdBy = 'admin';
 		Excel::create($fileName, function($excel) {
 			$excel->setTitle('TestResults_'.Input::get('dateFrom').'_'.Input::get('dateTo')) 
