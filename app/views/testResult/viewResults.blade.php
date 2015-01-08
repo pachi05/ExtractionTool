@@ -196,6 +196,8 @@ MLI Test Extraction Tool
 		</ul>
 		<ul class="nav navbar-nav navbar-right"></ul>
 		{{Form::open(array('action' => 'TestResultController@createTestResultsList', 'class' => 'navbar-form navbar-right'))}}
+			<input type="hidden" name="dateFrom" value="{{$inputDate[0]}}"> 
+			<input type="hidden" name="dateTo" value="{{$inputDate[1]}}"> 
 		{{Form::submit('Generate Report', array('class' => 'btn btn-primary'))}}
 		{{Form::close()}}
 	</div><!-- /.navbar-collapse -->

@@ -64,7 +64,6 @@ MLI Test Extraction Tool
 			<table class="table table-striped table-bordered table-download">
 				<thead>
 					<td><strong>Name</strong></td>
-               <td><strong>Extension</strong></td>
 					<td><strong>Date Created</strong></td>
 					<td><strong>Created By</strong></td>
 					<td><strong>Downloads</strong></td>
@@ -73,12 +72,16 @@ MLI Test Extraction Tool
             <tbody>
             @foreach($files as $key => $value)
             <tr>
-               <td>{{$value->_fileName}}</td>
-               <td>{{$value->_extension}}</td>
+               <td>{{$value->_fileName}}.{{$value->_extension}}</td>
                <td>{{$value->_dateCreated}}</td>
                <td>{{$value->_createdBy}}</td>
                <td>{{$value->_downloads}}</td>
-               <td><a href="{{URL::action(GeneratedResultController@downloadResult))}}"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+               <td><a href="{{URL::action('GeneratedResultController@downloadResult')}}"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+               <td>
+                  {{Form::open(array('action' => 'GeneratedResultController@downloadResult'))}}
+                     <input type="hidden" name="filename" value="{{$value->_fileName}}.{{$value->_extension}}">
+                  {{Form::close()}}
+               </td>
             </tr>
             @endforeach
             </tbody>
