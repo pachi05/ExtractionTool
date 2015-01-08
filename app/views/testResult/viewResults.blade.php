@@ -75,103 +75,39 @@ MLI Test Extraction Tool
 				@if($testResults->count())
 				<thead>
 					<tr>
-						<td><strong>MeterID</strong></td>
-						<td><strong>MeterPlace</strong></td>
-						<td><strong>SerialNo</strong></td>
 						<td><strong>MeterNo</strong></td>
-						<td><strong>ScanCode</strong></td>
 						<td><strong>Model</strong></td>
-						<td><strong>Voltage</strong></td>
 						<td><strong>Current</strong></td>
-						<td><strong>Precision</strong></td>
-						<td><strong>WireModel</strong></td>
-						<td><strong>Frequency</strong></td>
-						<td><strong>SerialDate</strong></td>
-						<td><strong>MadePlace</strong></td>
+						
 						<td><strong>TEMP</strong></td>
 						<td><strong>HUMIDITY</strong></td>
-						<td><strong>TESTER</strong></td>
-						<td><strong>RETESTER</strong></td>
-						<td><strong>MANAGE</strong></td>
-						<td><strong>TESTDATE</strong></td>
-						<td><strong>STARTEST</strong></td>
-						<td><strong>HIDDENTEST</strong></td>
-						<td><strong>StopTest</strong></td>
-						<td><strong>StartCurrent</strong></td>
-						<td><strong>Resistance</strong></td>
-						<td><strong>PIEZO</strong></td>
-						<td><strong>TESTYER</strong></td>
-						<td><strong>TESTMON</strong></td>
-						<td><strong>TESTDAY</strong></td>
-						<td><strong>MINCURR</strong></td>
-						<td><strong>WALKTEST</strong></td>
-						<td><strong>STARTDEG</strong></td>
-						<td><strong>ENDDEG</strong></td>
-						<td><strong>CUNDUTOTAL</strong></td>
-						<td><strong>CUNDUPEAK</strong></td>
-						<td><strong>CUNDUVALEY</strong></td>
-						<td><strong>PNO</strong></td>
-						<td><strong>TNO</strong></td>
-						<td><strong>TestUnit</strong></td>
-						<td><strong>Smax</strong></td>
-						<td><strong>ForConclusion</strong></td>
-						<td><strong>AftConclusion</strong></td>
+		
+						<td><strong>TestDate</strong></td>
+						
+						
 						<td><strong>Conclusion24h</strong></td>
 						<td><strong>Conclusion</strong></td>
-						<td><strong>Net</strong></td>
-						<td><strong>StartTime</strong></td>
-						<td><strong>HideTime</strong></td>
+						
 					</tr>
 				</thead>
 				<tbody>
 					@foreach($testResults as $key => $value)
 					<tr>
-						<td >{{$value->_meterID}}</td>
-						<td >{{$value->_meterPlace}}</td>
-						<td >{{$value->_serialNo}}</td>
+						
 						<td >{{$value->_meterNo}}</td>
-						<td >{{$value->_scanCode}}</td>
 						<td >{{$value->_model}}</td>
-						<td >{{$value->_voltage}}</td>
+						
 						<td >{{$value->_current}}</td>
-						<td >{{$value->_precision}}</td>
-						<td >{{$value->_wireModel}}</td>
-						<td >{{$value->_frequency}}</td>
-						<td >{{$value->_serialDate}}</td>
-						<td >{{$value->_madePlace}}</td>
+						
 						<td >{{$value->_temp}}</td>
 						<td >{{$value->_humidity}}</td>
-						<td >{{$value->_tester}}</td>
-						<td >{{$value->_retester}}</td>
-						<td >{{$value->_manage}}</td>
+						
 						<td >{{$value->_testDate}}</td>
-						<td >{{$value->_starTest}}</td>
-						<td >{{$value->_hiddenTest}}</td>
-						<td >{{$value->_stopTest}}</td>
-						<td >{{$value->_startCurrent}}</td>
-						<td >{{$value->_resistance}}</td>
-						<td >{{$value->_piezo}}</td>
-						<td >{{$value->_testYer}}</td>
-						<td >{{$value->_testMon}}</td>
-						<td >{{$value->_testDay}}</td>
-						<td >{{$value->_minCurr}}</td>
-						<td >{{$value->_walkTest}}</td>
-						<td >{{$value->_startDeg}}</td>
-						<td >{{$value->_endDeg}}</td>
-						<td >{{$value->_cunduTotal}}</td>
-						<td >{{$value->_cunduPeak}}</td>
-						<td >{{$value->_cunduValey}}</td>
-						<td >{{$value->_PNO}}</td>
-						<td >{{$value->_TNO}}</td>
-						<td >{{$value->_testUnit}}</td>
-						<td >{{$value->_sMax}}</td>
-						<td >{{$value->_forConclusion}}</td>
-						<td >{{$value->_aftConclusion}}</td>
+						
+						
 						<td >{{$value->_conclusion24h}}</td>
 						<td >{{$value->_conclusion}}</td>
-						<td >{{$value->_net}}</td>
-						<td >{{$value->_startTime}}</td>
-						<td >{{$value->_hideTime}}</td>
+						
 					</tr>
 					@endforeach
 				</tbody>
